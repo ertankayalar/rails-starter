@@ -37,6 +37,7 @@ services:
       - .:/app
       - ./tmp/bundle:/bundle
     command: bin/docker.dev
+    container_name: rails-starter
     environment:
       DATABASE_URL: postgres://dev:password@db
       BUNDLE_PATH:  /bundle
