@@ -1,4 +1,4 @@
-FROM ruby:3.2.2
+FROM ruby:3.3.0
 WORKDIR /app
 
 RUN apt-get update -qq && apt-get install -y build-essential postgresql-client

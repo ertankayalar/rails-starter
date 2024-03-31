@@ -1,39 +1,25 @@
-- Simple dev bootstrap rails with docker compose. You'll be up and running as quickly as 1..2...3!
 
-[Source Code](https://github.com/andrewsheelan/docker-bootstrap-rails)
+- Simple dev bootstrap rails with docker compose. 
+
+[Source Code](https://github.com/ertankayalar/rails-starter)
 
 # Requirements
 - docker
 - docker compose
-- Mac (kidding.. tested on a mac, let me know if it doesnt work for you)
 
 # Get started
 
-## Unix/Mac
+## Linux
 
 ```
-wget -O /tmp/z.$$ https://github.com/andrewsheelan/docker-bootstrap-rails/archive/refs/heads/esbuild.zip &&
-   unzip -d . /tmp/z.$$ &&
-   rm /tmp/z.$$
+git clone https://github.com/ertankayalar/rails-starter.git project-name
 
 # Rename this folder if needed
-cd docker-bootstrap-rails-master
+cd project-name 
 
 ./bootstrap
 ```
 
-
-## windows
-
-- clone the repository and run the following using powershell from inside the folder:
-
-```
-docker compose run --no-deps web bundle install
-docker compose run --no-deps web rails new . --force --database=postgresql --css tailwind
-docker compose run web bin/rails db:create
-docker compose run web bin/rails tailwindcss:install
-docker compose up
-```
 
 Goto [http://localhost:3000](http://localhost:3000)
 
