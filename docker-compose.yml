@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   db:
-    image: postgres
+    image: postgres:latest
     volumes:
       - ./tmp/db:/data/postgres
     environment:
@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
 
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:latest
     ports:
       - "5050:80"
     environment:
@@ -24,7 +24,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
       PGADMIN_CONFIG_SERVER_MODE: "False"
     volumes:
-      - ./tmp/pg_admin:/var/lib/pgadmin
+      - pg_admin:/var/lib/pgadmin
     networks:
       - rails-starter
     restart: unless-stopped
@@ -58,5 +58,6 @@ networks:
     driver: bridge
 
 volumes:
-  pg_data:
-  pgadmin_data:
+  pg_admin:
+
+  
