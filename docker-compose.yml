@@ -1,7 +1,6 @@
 version: "3.9"
 services:
   db:
-    container_name: pg_db
     image: postgres
     volumes:
       - ./tmp/db:/data/postgres
@@ -17,7 +16,6 @@ services:
     restart: unless-stopped
 
   pgadmin:
-    container_name: pg_admin
     image: dpage/pgadmin4
     ports:
       - "5050:80"
