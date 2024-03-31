@@ -3,13 +3,13 @@ services:
   db:
     container_name: pg_db
     image: postgres
+    volumes:
+      - pg_data:/data/postgres
     environment:
       POSTGRES_USER: dev
       POSTGRES_PASSWORD: password
       POSTGRES_HOST_AUTH_METHOD: trust
       PGDATA: /data/postgres
-    volumes:
-      - pg_data:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -58,6 +58,4 @@ networks:
 
 volumes:
   pg_data:
-    driver: local
   pgadmin_data:
-    driver: local
